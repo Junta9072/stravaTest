@@ -21,6 +21,9 @@ export default async (req, res) => {
   );
 
   const reAuthJson = await reauthorizeResponse.json();
+  return res.status(200).json({
+    reAuthJson,
+  });
 
   const response = await fetch(
     "https://www.strava.com/api/v3/athletes/8696836/stats?access_token=" +
